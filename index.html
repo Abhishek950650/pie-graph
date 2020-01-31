@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart</title>
+    <script src="./papaparse.js"></script>
+    <script src="./papaparse.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.6.0/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Data Pie Chart</span>
+        <span>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="fileInput">
+                <label class="custom-file-label" for="fileInput">Choose file</label>
+            </div>
+        </span>
+
+    </nav>
+    <div id="popupLoad" class="popupLoad" style="display: none">
+        <div class="popupinner">
+            <div class="load_box">
+                <div class="header">Selection</div>
+                <div class="class_box ">
+                    <div class="d-flex_b p-0 text-center ">
+                        <div class="alert_icon  " style="display: inline-block">
+                            <select class="custom-select" name="selectlayer1" id="myselect1">
+                                <option selected>Select Product Name Columns</option>
+                            </select>
+                            <br> <br>
+                            <select class="custom-select" name="selectlayer2" id="myselect2">
+                                <option selected>Select Product Value Columns</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class=" text-center pt-2">
+                        <br>
+                        <button class="btn btn-outline-dark" style="position: relative; padding: 10;"
+                            onClick=" SelectColumn(); $('#popupLoad').hide(); ">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- prepare a DOM container with width and height -->
+    <br>
+    <div class="container my-3">
+        <h4 class="display-6">Data Shown In (Pie) Chart</h4>
+        <p class="lead">Devloped by Abhishek Jaiswal</p>
+    </div>
+    <br>
+    <div id="pie" style="width: 100%; height:700px;"></div>
+
+    <script type="text/javascript">
+
+        document.getElementById("fileInput").addEventListener("change", function (evt) {
+            var file = evt.target.files[0], // Read only first file.
+                reader = new FileReader();
+            reader.onload = function (e) {
+                fileText = e.target.result;
+                extension = file.name.split('.')[1];
+                if (extension.toLowerCase() == 'csv') {
+                    geojsonLayer = Csv2geoJson(fileText);
+                } else if (extension.toLowerCase() == 'geojson') {
+                    geojsonLayer = JSON.parse(fileText);
+                }
+                else {
+                    alert('Chose geojson or csv data');
+                }
+                if (geojsonLayer) {
+                    var popups = document.getElementById("popupLoad").style = "display:block";
+                    var column = geojsonLayer.features[0].properties;
+                    var first_selection = document.getElementById("myselect1");
+                    var second_selection = document.getElementById("myselect2");
+
+                    for (var i = 0; i < (Object.keys(column)).length; i++) {
+                        var option = document.createElement("option");
+                        option.text = (Object.keys(column)[i]);
+                        first_selection.add(option);
+                        if (typeof (Object.values(column)[i]) == "number") {
+                            option.text = (Object.keys(column)[i]);
+                            second_selection.add(option);
+
+                        }
+
+                    }
+                }
+            }
+            reader.readAsText(file);
+        });
+
+        function SelectColumn() {
+            var series_data = [];
+            let file2 = $("#fileInput")[0].files[0];
+            table_name = file2.name.split('.', 1);
+            select_value1 = $('#myselect1').val();
+            select_value2 = $('#myselect2').val();
+
+            if (extension.toLowerCase() == 'csv') {
+                CsvData = Papa.parse(fileText);
+                val1_index = CsvData.data[0].indexOf(select_value1);
+                val2_index = CsvData.data[0].indexOf(select_value2);
+
+                for (let i = 1; i < CsvData.data.length; i++) {
+                    series_data.push({ name: CsvData.data[i][val1_index], value: Number(CsvData.data[i][val2_index]) });
+                }
+
+            } else if (extension.toLowerCase() == 'geojson') {
+                for (let i = 0; i < geojsonLayer.features.length; i++) {
+                    series_data.push({ name: geojsonLayer.features[i].properties[select_value1], value: Number(geojsonLayer.features[i].properties[select_value2]) });
+
+                }
+            }
+
+            // based on prepared DOM, initialize echarts instance
+            var myChart = echarts.init(document.getElementById('pie'));
+
+            // Create a pie chart:
+            var option = {
+                series: {
+                    type: 'pie',
+                    radius: '100%',
+                    roseType: 'angle',
+                    data: series_data
+                }
+
+            }
+            echarts.init(document.getElementById('pie')).setOption(option);
+
+            $('#myselect1').empty();
+            $('#myselect2').empty();
+        }
+
+        // csv to geojson  function
+        function Csv2geoJson(csv) {
+            let geoCsv = Papa.parse(csv);
+            let main_arr = geoCsv.data;
+            let csv_to_geojson = {};
+            csv_to_geojson["type"] = "FeatureCollection";
+            csv_to_geojson["features"] = [];
+            let lat_index, lng_index;
+
+            for (let i = 0; i < main_arr.length - 1; i++) {
+
+                if (i == 0) {
+                    first_row = main_arr[i];
+                    for (let j = 0; j < first_row.length; j++) {
+                        if (first_row[j].toLowerCase() == 'lat' || first_row[j].toLowerCase() == 'latitude') {
+                            lat_index = j
+                        }
+                        else if (first_row[j].toLowerCase() == 'lon' || first_row[j].toLowerCase() == 'longitude' || first_row[j].toLowerCase() == 'long') {
+                            lng_index = j
+                        }
+
+                    }
+
+                }
+                else {
+                    let obj_dat = {}
+                    let other_row = main_arr[i];
+                    let cord_arr = [Number(main_arr[i][lng_index]), Number(main_arr[i][lat_index])];
+                    obj_dat["type"] = 'Feature';
+                    obj_dat["properties"] = {};
+
+                    for (let k = 0; k < other_row.length; k++) {
+                        if (k != lat_index && k != lng_index) {
+                            if (/[a-zA-Z]/.test(other_row[k])) {
+
+                                obj_dat["properties"][first_row[k]] = other_row[k];
+
+                            } else if (/^\'[0-9]+\.[0-9]+\'$/.test(other_row[k])) {
+
+                                obj_dat["properties"][first_row[k]] = Number(other_row[k]);
+                            }
+                            else {
+
+                                obj_dat["properties"][first_row[k]] = Number(other_row[k]);
+                            }
+
+                        }
+
+                    }
+                    obj_dat["geometry"] = {}
+                    obj_dat["geometry"]["type"] = "Point";
+                    obj_dat["geometry"]["coordinates"] = cord_arr;
+
+                    csv_to_geojson["features"].push(obj_dat);
+                }
+            }
+
+            return csv_to_geojson;
+        }
+
+    </script>
+    <!-- devloped by Abhishek Jaiswal  -->
+</body>
+
+</html>

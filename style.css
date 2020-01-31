@@ -1,0 +1,109 @@
+#map {
+    width: 100%;
+    height: 700px;
+    z-index: 99;
+  }
+  
+  #loadButton {
+    position: absolute;
+    bottom:30px;
+    left:20px;
+    z-index: 100;
+  }
+
+  .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+
+
+.popupLoad {
+  position: fixed;
+  z-index: 999999;
+  display: table;
+  background: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  }
+
+  .popupLoadInfo {
+position: fixed;
+z-index: 999999;
+display: table;
+background: rgba(0, 0, 0, 0.1);
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.1);
+}
+
+
+.popupLoad .popupinner {
+display: table-cell;
+height: 100%;
+width: 100%;
+text-align: center;
+margin: 0 auto;
+vertical-align: middle;
+}
+
+.popupLoadInfo .popupinnerInfo {
+display: table-cell;
+height: 100%;
+width: 100%;
+text-align: center;
+margin: 0 auto;
+vertical-align: middle;
+background-color: white;
+}
+
+.popupLoad .popupinner .load_box {
+width: 350px;
+margin: 0 auto;
+}
+
+.popupLoadInfo .popupinnerInfo .load_boxInfo {
+width: 350px;
+margin: 0 auto;
+}
+
+.class_box {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+  padding: 20px;
+  background: #fff;
+  font-size: 16px;
+  }
+  
+  .class_boxInfo {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px;
+  padding: 20px;
+  background: #fff;
+  font-size: 16px;
+  }
+
+  .header {
+    text-align: left;
+    font-size: 12px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+    background: #004572;
+    line-height: 22px;
+    padding: 5px 5px 5px 13px;
+    color: #fff;
+    cursor: move;
+    }
+
+  

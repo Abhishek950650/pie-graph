@@ -1,0 +1,523 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "village",
+        "intensity": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.420403,
+          28.295684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.419828,
+          17.505097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.680336,
+          12.903814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.277502,
+          26.462047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "poi",
+        "intensity": 7
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.875002,
+          31.601621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.563551,
+          12.903629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "landmark",
+        "intensity": 8
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.677837,
+          12.826164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.234365,
+          22.29703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.637061,
+          12.334786
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.187455,
+          28.572177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.951111,
+          19.19
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 4
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.295197,
+          28.364289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseName",
+        "intensity": 6
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.874234,
+          18.531932
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.913413,
+          19.086991
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.841251,
+          21.230547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 47
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.90946,
+          26.818384
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.462956,
+          17.465404
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "village",
+        "intensity": 40
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          82.763716,
+          18.122657
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 44
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.099439,
+          28.596914
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 55
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.7892,
+          21.22794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "village",
+        "intensity": 54
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.143437,
+          22.469583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 67
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          83.323509,
+          17.736868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subDistrict",
+        "intensity": 88
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.666647,
+          18.346818
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 66
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.826163,
+          19.38193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 33
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.291199,
+          13.09909
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 88
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.539411,
+          20.55142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 66
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.34669,
+          28.409741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "pincode",
+        "intensity": 87
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          74.038061,
+          18.782595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "houseNumber",
+        "intensity": 15
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.296246,
+          28.352802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "village",
+        "intensity": 83
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          80.753081,
+          26.860226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 75
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.608546,
+          23.030879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 45
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.808819,
+          18.474699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 69
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.640191,
+          13.007649
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          75.758075,
+          26.934662
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "pincode",
+        "intensity": 25
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.473207,
+          23.406234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "locality",
+        "intensity": 29
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.628293,
+          23.008012
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "subLocality",
+        "intensity": 36
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          81.013948,
+          26.851605
+        ]
+      }
+    }
+  ]
+}
